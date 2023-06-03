@@ -14,5 +14,14 @@ pipeline {
             }
         }
 
+        stage('ddd Git') {
+            steps {
+                script {
+                    echo 'vvvv'
+                }
+            }
+        }
+
+
     }
 }
