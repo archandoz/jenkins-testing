@@ -8,7 +8,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo "MY_TEXT"
-                echo  ${env}
+                sh 'printenv'
         }
     }
 }
