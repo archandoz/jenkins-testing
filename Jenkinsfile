@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                checkout scmGit(branches: [[name: 'refs/heads/develop']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/archandoz/jenkins-testing.git']])            }
+                checkout scmGit(branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/archandoz/jenkins-testing.git']])            }
         }
     }
 }
