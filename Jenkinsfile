@@ -1,27 +1,10 @@
 pipeline {
+    agent any
 
     stages {
-        stage('Cloning Git') {
+        stage('Hello') {
             steps {
-                script {
-                    checkout([
-                        $class: 'GitSCM',
-                        branches: [[name: 'refs/heads/master']],
-                        extensions: [[$class: 'CloneOption', noTags: false, shallow: false, depth: 0, reference: '']],
-                        userRemoteConfigs: scm.userRemoteConfigs,
-                    ])
-                }
-            }
+                checkout scmGit(branches: [[name: 'refs/heads/develop']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/archandoz/jenkins-testing.git']])            }
         }
-
-        stage('ddd Git') {
-            steps {
-                script {
-                    echo 'vvvv'
-                }
-            }
-        }
-
-
     }
 }
