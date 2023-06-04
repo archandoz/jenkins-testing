@@ -1,27 +1,11 @@
 pipeline {
+    agent any
 
     stages {
-        stage('Cloning Git') {
+        stage('Hello') {
             steps {
-                script {
-                    checkout([
-                        $class: 'GitSCM',
-                        branches: [[name: 'refs/heads/master']],
-                        extensions: [[$class: 'CloneOption', noTags: false, shallow: false, depth: 0, reference: '']],
-                        userRemoteConfigs: scm.userRemoteConfigs,
-                    ])
-                }
+                echo 'Hello World'
             }
         }
-
-        stage('ddd Git') {
-            steps {
-                script {
-                    echo 'vvvv'
-                }
-            }
-        }
-
-
     }
 }
