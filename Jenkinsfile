@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh 'printenv'
+                def username = 'toni'
         }
     }
 }
