@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh 'echo $env'
+                sh 'ls'
         }
     }
 }
